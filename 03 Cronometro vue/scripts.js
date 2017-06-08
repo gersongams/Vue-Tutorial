@@ -1,6 +1,9 @@
 // Instancia de Vue
 var primeraApp = new Vue({
+
+  // El elemento DOM para montar nuestro modelo de vista.
   el: '#primeraApp',
+  // Definimos las propiedades y les damos valores inciales
   data: {
   	name: 'segundos',
     count: 0
