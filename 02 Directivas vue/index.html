@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <ul id="ctryList">
+        <li v-for="pais in paises" v-on:click="showName(pais)">
+            {{pais}}
+        </li>
+    </ul>
+
+    <script src="https://unpkg.com/vue@2.3.3"></script>
+
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
