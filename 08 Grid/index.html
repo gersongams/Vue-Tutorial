@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <form id="main" v-cloak>
+
+        <div class="bar">
+
+            <!-- Estos 2 botones cambian la variable layout 
+            que cambia la forma en como se muestran los layouts. -->
+            <div class="title">Beauty of Peru</div>
+            <a class="list-icon" v-bind:class="{ 'active': layout == 'list'}" v-on:click="layout = 'list'"></a>
+            <a class="grid-icon" v-bind:class="{ 'active': layout == 'grid'}" v-on:click="layout = 'grid'"></a>
+        </div>
+
+        <!-- Tenemos 2 layouts. Nosotros escogemos como se va a mostrar dependiendo de la variable layout -->
+
+        <ul v-if="layout == 'grid'" class="grid">
+            <!-- Una vista con fotos sin texto-->
+            <li v-for="a in articles">
+                <a v-bind:href="a.url" target="_blank"><img v-bind:src="a.image" /></a>
+            </li>
+        </ul>
+
+        <ul v-if="layout == 'list'" class="list">
+            <!-- Una vista pequeña con fotos y texto -->
+            <li v-for="a in articles">
+                <a v-bind:href="a.url" target="_blank">
+                <img v-bind:src="a.image" />
+                <p>{{a.title}}</p>
+                <p>{{a.city}}</p>
+                </a>
+            </li>
+        </ul>
+
+    </form>
+
+    <script src="https://unpkg.com/vue@2.3.3"></script>
+
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
