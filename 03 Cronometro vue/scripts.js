@@ -5,7 +5,7 @@ var primeraApp = new Vue({
   el: '#primeraApp',
   // Definimos las propiedades y les damos valores inciales
   data: {
-  	name: 'segundos',
+  	secs: 'segundos',
     count: 0
   }
 });

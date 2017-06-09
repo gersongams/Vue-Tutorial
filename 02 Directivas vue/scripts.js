@@ -5,12 +5,13 @@ var ctryList = new Vue({
     el: "#ctryList",
     // Definimos las propiedades y les damos valores inciales
     data: {
-        paises : ["Peru", "Ecuador", "Venezuela", "Brasil", "Argentina"]
+        paises : ["Peru", "Ecuador", "Venezuela", "Brasil", "Argentina","Rusia", "Estados Unidos"]
     },
     // Definimos las funciones que usaremos
     methods: {
         showName: function showName(pais) {
             alert(pais);
+            console.log(pais);
         }
     }
 })

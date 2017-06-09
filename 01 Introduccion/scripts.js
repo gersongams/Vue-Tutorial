@@ -5,6 +5,8 @@ var test = new Vue({
   el: '#test',
   // Definimos las propiedades y les damos valores inciales
   data: {
-    mensaje: 'Hola mundo!'
+    mensaje: 'Hola mundo!',
+    numero : 666,
+    fecha: new Date()
   }
 })

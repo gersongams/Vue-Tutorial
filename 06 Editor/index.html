@@ -13,30 +13,30 @@
     <!-- v-cloak oculta los enlaces de datos no compilados hasta que la instancia de Vue esté lista.-->
     <!-- Cuando se hace click en el elemeto hideTooltp() es llamad-->
 
-<div id="main" v-cloak v-on:click="hideTooltip" >
+    <div id="main" v-cloak v-on:click="hideTooltip">
 
-    <!-- Este es el tootltip
+        <!-- Este es el tootltip
          La directiva v-on:clock.stop es un manejador de eventos para los clicks, con un modificador que detiene el evento
          v-if asegura que el tooltip solo se muestra cuando la variable showtooltip es true -->
 
-    <div class="tooltip" v-on:click.stop v-if="show_tooltip">
+        <div class="tooltip" v-on:click.stop v-if="show_tooltip">
 
-        
-        <!-- v-model conecta el contenido del campo de texto con el modelo "text_content".
+
+            <!-- v-model conecta el contenido del campo de texto con el modelo "text_content".
              Cualquier cambio en el campo de texto automaticamente actualizará la variable y
              todos las demás conexiones de la pagina dependen de esta-->
 
-        <input type="text" v-model="text_content" />
+            <input type="text" v-model="text_content" />
+        </div>
+
+
+        <!--Cuando se hace click en el parrafo llama al metodo toggleTooltip y detiene el evento de propagacion-->
+
+        <!-- la expresion {{text_content}} será reemplazada con el valor de "text_content"-->
+
+        <p v-on:click.stop="toggleTooltip">{{text_content}}</p>
+
     </div>
-
-    
-    <!--Cuando se hace click en el parrafo llama al metodo toggleTooltip y detiene el evento de propagacion-->
-
-    <!-- la expresion {{text_content}} será reemplazada con el valor de "text_content"-->
-    
-    <p v-on:click.stop="toggleTooltip">{{text_content}}</p>
-
-</div>
 
     <script src="https://unpkg.com/vue@2.3.3"></script>
 

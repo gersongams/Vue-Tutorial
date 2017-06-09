@@ -13,18 +13,15 @@
     <div id="main">
 
         <!-- El menú de navegación tendrá el valor de la variable "activa" como una clase -->
-
         <!-- Para evitar que la página salte cuando se hace click 
         en un enlace, usamos el modificador "prevent" (abreviatura de preventDefault).-->
 
         <nav v-bind:class="active" v-on:click.prevent>
-
-
         <!--Cuando se hace clic en un enlace en el menú, llamamos al método makeActive, 
         definido en la instancia de Vue de JavaScript. Cambiará el valor de "activo".-->
 
             <a href="#" class="home" v-on:click="makeActive('home')">Inicio</a>
-            <a href="#" class="projects" v-on:click="makeActive('projects')">Projectos</a>
+            <a href="#" class="projects" v-on:click="makeActive('projects')">Proyectos</a>
             <a href="#" class="services" v-on:click="makeActive('services')">Servicios</a>
             <a href="#" class="contact" v-on:click="makeActive('contact')">Contacto</a>
         </nav>
