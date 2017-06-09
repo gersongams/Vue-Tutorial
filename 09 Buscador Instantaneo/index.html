@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <form id="main" v-cloak>
+
+        <div class="bar">
+            <!-- Crear un enlace entre el modelo searchString y el campo de texto -->
+            <input type="text" v-model="searchString" placeholder="Ingresa tu busqueda" />
+        </div>
+
+        <ul>
+            <!-- Renderiza un elemento li por cada entrada en el array computado filteredArticles. -->
+
+            <li v-for="article in filteredArticles">
+                <a v-bind:href="article.url"><img v-bind:src="article.image" /></a>
+                <p>{{article.title}}</p>
+            </li>
+        </ul>
+
+    </form>
+
+    <script src="https://unpkg.com/vue@2.3.3"></script>
+
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
