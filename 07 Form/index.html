@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <!-- v-cloak oculta los enlaces de datos no compilados hasta que la instancia de Vue esté lista.-->
+
+    <form id="main" v-cloak>
+
+        <h1>Servicios</h1>
+
+        <ul>
+            <!-- Recorremos a traves del array asginanando un manejador del click y steamos o 
+                 removemos la clase "active" si es necesario -->
+                
+            <li v-for="service in services" v-on:click="toggleActive(service)" v-bind:class="{ 'active': service.active}">
+                <!-- Muestra el nombre y el precio por cada elemento del array.
+                Vue.js tiene un filtro de moneda incorporado para darle formato al precio-->
+                {{service.name}} <span>{{service.price | currency}}</span>
+            </li>
+        </ul>
+
+        <div class="total">
+            <!-- Calcula el precio total de todos los sercicios escogidos-->
+            Total: <span>{{total() | currency}}</span>
+        </div>
+
+    </form>
+
+    <script src="https://unpkg.com/vue@2.3.3"></script>
+
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
